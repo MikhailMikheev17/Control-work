@@ -5,6 +5,7 @@ Start();
 void Start()
 {
   string[] arrayFirst = GetFirstArray();
+  System.Console.WriteLine();
   PrintArray(arrayFirst);
   System.Console.WriteLine();
   string[] arrFinal = GetNewArray(arrayFirst);
@@ -31,14 +32,21 @@ void PrintArray(string[] array)//распечатываем массив
 
 string[] GetNewArray(string[] array) // получание нового массива 
 {
-  string[] newAr = new string[array.Length];
   int count = 0;
+  for (int i = 0; i < array.Length; i++) // определяем длину нового массива 
+  {
+    if (array[i].Length <= 3) count++;
+  }
 
+  string[] newAr = new string[count];
+  int j = 0;
   for (int i = 0; i < array.Length; i++)
   {
     if (array[i].Length <= 3)
-      newAr[i] = array[i];    
+    {
+      newAr[j] = array[i];
+      j++;
+    }
   }
-
   return newAr;
 }
