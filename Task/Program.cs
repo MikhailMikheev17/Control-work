@@ -9,6 +9,7 @@ void Start()
   PrintArray(arrayFirst);
   System.Console.WriteLine();
   string[] arrFinal = GetNewArray(arrayFirst);
+  System.Console.WriteLine("New array with elements of the first array  with length <= 3 ");
   PrintArray(arrFinal);
 }
 
